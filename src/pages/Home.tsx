@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import '../styles/pages/_home.scss';
 
 function Home() {
   return (
