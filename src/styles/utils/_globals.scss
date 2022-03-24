@@ -1,0 +1,28 @@
+@use './mixins';
+
+.flex {
+  display: flex;
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.hide-for-mobile {
+  @include mixins.breakpoint-down(medium) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include mixins.breakpoint-up(large) {
+    display: none;
+  }
+}
