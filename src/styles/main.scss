@@ -1,0 +1,6 @@
+@forward 'base';
+@use 'utils';
+
+body {
+  background-color: utils.$blue;
+}
