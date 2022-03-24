@@ -3,36 +3,35 @@
 header {
   background-color: utils.$blue;
   font-family: utils.$font-mono;
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 5rem;
   position: fixed;
   backdrop-filter: blur(10px);
   width: 100%;
+
+  @include utils.breakpoint-down(medium) {
+    padding: 0 3rem;
+  }
 }
 
 .nav {
-  align-items: center;
-  display: flex;
   height: 100px;
-  justify-content: space-between;
-  flex: 1 1 100%;
 
   &__logo {
     width: 36px;
   }
 
   &__links {
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
+    column-gap: 3rem;
+
     & > ol {
-      color: #e4f0ff;
-      column-gap: 2rem;
-      display: inherit;
+      column-gap: 3rem;
       list-style-type: none;
 
-      & > li {
+      & > li > a {
+        color: utils.$grey;
         cursor: pointer;
+        text-decoration: none;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
         &:hover {
@@ -82,6 +81,71 @@ header {
         width: 99%;
         height: 99%;
       }
+    }
+  }
+
+  &__menu {
+    background-color: utils.$green;
+    cursor: pointer;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    z-index: 5;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: utils.$green;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 28px;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+  &__mobileLinks {
+    position: absolute;
+    row-gap: 3rem;
+    flex-direction: column;
+    height: 100vh;
+    width: 70vw;
+    right: 0;
+    top: 0;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #2f3d5b;
+    z-index: 1;
+
+    & > ol {
+      flex-direction: column;
+      list-style-type: none;
+      row-gap: 3rem;
+
+      & > li > a {
+        vertical-align: middle;
+        text-decoration: none;
+        color: utils.$grey;
+        & > span {
+          color: utils.$green;
+        }
+      }
+    }
+
+    &__button {
+      padding: 0.5rem 1rem;
+      color: utils.$green;
+      border: 1px solid utils.$green;
+      border-radius: 4px;
     }
   }
 }
