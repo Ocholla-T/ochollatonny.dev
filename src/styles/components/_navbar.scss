@@ -1,0 +1,87 @@
+@use '../utils';
+
+header {
+  background-color: utils.$blue;
+  font-family: utils.$font-mono;
+  font-size: 14px;
+  padding: 0 5rem;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  flex: 1 1 100%;
+
+  &__logo {
+    width: 36px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    & > ol {
+      color: #e4f0ff;
+      column-gap: 2rem;
+      display: inherit;
+      list-style-type: none;
+
+      & > li {
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        &:hover {
+          color: utils.$green;
+        }
+
+        & > span {
+          color: utils.$green;
+        }
+      }
+    }
+
+    &__button {
+      border: none;
+      color: utils.$green;
+      cursor: pointer;
+      padding: 0.625rem 1rem;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 35%;
+        position: absolute;
+        transition: 0.35s;
+        width: 15%;
+        z-index: 2;
+      }
+
+      &::before {
+        border-top: 1px solid utils.$green;
+        border-left: 1px solid utils.$green;
+        left: 0;
+        top: 0;
+      }
+
+      &::after {
+        border-right: 1px solid utils.$green;
+        border-bottom: 1px solid utils.$green;
+        bottom: 0;
+        right: 0;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        width: 99%;
+        height: 99%;
+      }
+    }
+  }
+}
