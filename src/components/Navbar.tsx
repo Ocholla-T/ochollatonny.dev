@@ -1,13 +1,22 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+import { useTransition, animated } from 'react-spring';
 import logo from '../images/logo.svg';
 import '../styles/components/_navbar.scss';
 
-function Navbar() {
-  const [isShown, setIsShown] = useState(false);
+function Navbar(): JSX.Element {
+  const [isShown, setIsShown] = useState<boolean>(false);
+  const [isClicked, setIsClicked] = useState(false);
 
-  function toggleMenu() {
+  const transition = useTransition(isShown, {
+    from: { transform: 'translate3d(+100%, 0px, 0px)' },
+    enter: { transform: 'translate3d(0%, 0px, 0px)' },
+    leave: { transform: 'translate3d(+100%, 0px, 0px)' },
+  });
+
+  const toggleMenu = (): void => {
     setIsShown((previousShown) => !previousShown);
-  }
+    setIsClicked((previousClickedState) => !previousClickedState);
+  };
 
   return (
     <header>
@@ -36,34 +45,43 @@ function Navbar() {
 
         {/* mobile and tablet screen markup */}
 
-        <div className="nav__menu hide-for-desktop" onClick={toggleMenu} />
-        {isShown && (
-          <aside className="nav__mobileLinks flex flex-ai-c flex-jc-c hide-for-desktop">
-            <ol className="flex">
-              <li>
-                <a href="">
-                  <span>01.</span>
-                  <br />
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <span>02.</span>
-                  <br />
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <span>03.</span>
-                  <br />
-                  Contact
-                </a>
-              </li>
-            </ol>
-            <a className="nav__mobileLinks__button"> Resume</a>
-          </aside>
+        <div
+          className={`nav__menu hide-for-desktop ${isClicked && 'nav__menu-rotate'}`}
+          onClick={toggleMenu}
+        />
+        {transition(
+          (style, menu) =>
+            menu && (
+              <animated.aside
+                style={style}
+                className={`nav__menu__links flex flex-ai-c flex-jc-c hide-for-desktop`}
+              >
+                <ol className="flex">
+                  <li>
+                    <a href="">
+                      <span>01.</span>
+                      <br />
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>02.</span>
+                      <br />
+                      Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>03.</span>
+                      <br />
+                      Contact
+                    </a>
+                  </li>
+                </ol>
+                <a className="nav__menu__links__button"> Resume</a>
+              </animated.aside>
+            ),
         )}
       </nav>
     </header>
