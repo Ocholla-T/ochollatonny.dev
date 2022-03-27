@@ -5,7 +5,7 @@ header {
   font-family: utils.$font-mono;
   font-size: 13px;
   padding: 0 5rem;
-  position: fixed;
+  position: sticky;
   backdrop-filter: blur(10px);
   width: 100%;
 
