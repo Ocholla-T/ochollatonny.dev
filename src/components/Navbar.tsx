@@ -5,7 +5,7 @@ import '../styles/components/_navbar.scss';
 
 function Navbar(): JSX.Element {
   const [isShown, setIsShown] = useState<boolean>(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   const transition = useTransition(isShown, {
     from: { transform: 'translate3d(+100%, 0px, 0px)' },
