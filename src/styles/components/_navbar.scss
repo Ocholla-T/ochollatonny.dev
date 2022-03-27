@@ -10,7 +10,7 @@ header {
   width: 100%;
 
   @include utils.breakpoint-down(medium) {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 }
 
@@ -91,6 +91,8 @@ header {
     position: relative;
     width: 24px;
     z-index: 5;
+    transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
+    transform: rotate(0deg);
 
     &::before,
     &::after {
@@ -109,43 +111,62 @@ header {
     &::after {
       bottom: -8px;
     }
-  }
 
-  &__mobileLinks {
-    position: absolute;
-    row-gap: 3rem;
-    flex-direction: column;
-    height: 100vh;
-    width: 70vw;
-    right: 0;
-    top: 0;
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #2f3d5b;
-    z-index: 1;
+    &-rotate {
+      visibility: hidden;
+      transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      transform: rotate(225deg);
 
-    & > ol {
-      flex-direction: column;
-      list-style-type: none;
-      row-gap: 3rem;
-
-      & > li > a {
-        vertical-align: middle;
-        text-decoration: none;
-        color: utils.$grey;
-        & > span {
-          color: utils.$green;
-        }
+      &::before {
+        content: '';
+        visibility: visible;
+        transform-origin: center;
+        transform: translate(-1px, 9px) rotatez(90deg);
+      }
+      &::after {
+        content: '';
+        visibility: visible;
+        transform-origin: center;
+        transform: translate(-1px, -7px) rotatez(0deg);
       }
     }
 
-    &__button {
-      padding: 0.5rem 1rem;
-      color: utils.$green;
-      border: 1px solid utils.$green;
-      border-radius: 4px;
+    &__links {
+      background-color: #2f3d5b;
+      flex-direction: column;
+      font-size: 1rem;
+      font-weight: 500;
+      height: 100vh;
+      letter-spacing: 1px;
+      position: absolute;
+      right: 0;
+      row-gap: 3rem;
+      text-align: center;
+      top: 0;
+      width: 70vw;
+      z-index: 1;
+
+      & > ol {
+        flex-direction: column;
+        list-style-type: none;
+        row-gap: 3rem;
+
+        & > li > a {
+          color: utils.$grey;
+          text-decoration: none;
+          vertical-align: middle;
+          & > span {
+            color: utils.$green;
+          }
+        }
+      }
+
+      &__button {
+        border-radius: 4px;
+        border: 1px solid utils.$green;
+        color: utils.$green;
+        padding: 0.5rem 1rem;
+      }
     }
   }
 }
