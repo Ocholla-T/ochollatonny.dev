@@ -1,0 +1,90 @@
+@use '../utils';
+
+main {
+  min-height: 100%;
+  position: relative;
+}
+.hero {
+  // filter: blur(10px);
+  color: utils.$grey;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  line-height: 1.5;
+  margin-left: 8rem;
+  margin-top: 4rem;
+  padding: 0 8rem 0 4rem;
+  width: 85%;
+
+  @include utils.breakpoint-down(medium) {
+    margin: 0;
+    padding: 0 2rem;
+    position: relative;
+    top: 5rem;
+    width: 100%;
+  }
+
+  & > h4 {
+    color: utils.$green;
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  & > h1 {
+    color: utils.$grey;
+    font-size: clamp(30px, 6vw, 70px);
+    margin-bottom: 10px;
+  }
+
+  & > p {
+    color: #a5abbd;
+    max-width: 540px;
+    margin-top: 10px;
+
+    & > span {
+      color: utils.$green;
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    max-width: 192px;
+
+    &:before {
+      content: '';
+      background: utils.$green;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: utils.$blue;
+      transition: color 0.22s ease-in-out 0.13s;
+
+      > .hero__button__icon {
+        filter: none;
+        transition: filter 0.22s ease-in-out 0.13s;
+      }
+
+      &:before {
+        transform: scaleX(1);
+        transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      }
+    }
+
+    &__icon {
+      filter: invert(97%) sepia(78%) saturate(791%) hue-rotate(77deg) brightness(101%) contrast(96%);
+      margin-right: 1rem;
+      width: 24px;
+    }
+  }
+}
