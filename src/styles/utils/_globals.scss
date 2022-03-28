@@ -1,4 +1,5 @@
 @use './mixins';
+@use './variables';
 
 .flex {
   display: flex;
@@ -25,4 +26,16 @@
   @include mixins.breakpoint-up(large) {
     display: none;
   }
+}
+
+.button {
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid variables.$green;
+  color: variables.$green;
+  cursor: pointer;
+  padding: 0.625rem 1rem;
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
 }
