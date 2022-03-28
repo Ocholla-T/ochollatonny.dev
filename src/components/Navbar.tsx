@@ -4,17 +4,15 @@ import logo from '../images/logo.svg';
 import '../styles/components/_navbar.scss';
 
 function Navbar(): JSX.Element {
-  const [isShown, setIsShown] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
-  const transition = useTransition(isShown, {
+  const transition = useTransition(isClicked, {
     from: { transform: 'translate3d(+100%, 0px, 0px)' },
     enter: { transform: 'translate3d(0%, 0px, 0px)' },
     leave: { transform: 'translate3d(+100%, 0px, 0px)' },
   });
 
   const toggleMenu = (): void => {
-    setIsShown((previousShown) => !previousShown);
     setIsClicked((previousClickedState) => !previousClickedState);
   };
 
@@ -54,7 +52,7 @@ function Navbar(): JSX.Element {
             menu && (
               <animated.aside
                 style={style}
-                className={`nav__menu__links flex flex-ai-c flex-jc-c hide-for-desktop`}
+                className={`nav__menu__links-mobile flex flex-ai-c flex-jc-c hide-for-desktop`}
               >
                 <ol className="flex">
                   <li>
@@ -79,7 +77,7 @@ function Navbar(): JSX.Element {
                     </a>
                   </li>
                 </ol>
-                <a className="nav__menu__links__button"> Resume</a>
+                <a className="button"> Resume</a>
               </animated.aside>
             ),
         )}
