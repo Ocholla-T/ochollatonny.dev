@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../layouts/Navbar';
 import '../styles/pages/_home.scss';
 import downloadIcon from '../images/download.svg';
 
