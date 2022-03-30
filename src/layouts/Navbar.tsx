@@ -1,19 +1,29 @@
 import { useState } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated, config } from 'react-spring';
 import logo from '../images/logo.svg';
-import '../styles/components/_navbar.scss';
+import Resume from '../images/Ocholla Tonny Resume.pdf';
+import '../styles/layouts/_navbar.scss';
 
-function Navbar(): JSX.Element {
+interface Props {
+  getIsMobileMenuOpenState: Function;
+}
+
+function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
   const transition = useTransition(isClicked, {
+    config: config.gentle,
     from: { transform: 'translate3d(+100%, 0px, 0px)' },
     enter: { transform: 'translate3d(0%, 0px, 0px)' },
     leave: { transform: 'translate3d(+100%, 0px, 0px)' },
   });
 
   const toggleMenu = (): void => {
-    setIsClicked((previousClickedState) => !previousClickedState);
+    setIsClicked((previousClickedState) => {
+      let newClickedState = !previousClickedState;
+      getIsMobileMenuOpenState(newClickedState);
+      return newClickedState;
+    });
   };
 
   return (
@@ -38,7 +48,9 @@ function Navbar(): JSX.Element {
               </a>
             </li>
           </ol>
-          <a className="nav__links__button"> Resume</a>
+          <a href={Resume} className="nav__links__button" target="_blank" rel="noopener noreferrer">
+            Resume
+          </a>
         </div>
 
         {/* mobile and tablet screen markup */}
@@ -77,7 +89,9 @@ function Navbar(): JSX.Element {
                     </a>
                   </li>
                 </ol>
-                <a className="button"> Resume</a>
+                <a href={Resume} className="button" target="_blank" rel="noopener noreferrer">
+                  Resume
+                </a>
               </animated.aside>
             ),
         )}
