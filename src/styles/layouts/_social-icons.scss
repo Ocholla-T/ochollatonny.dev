@@ -1,0 +1,29 @@
+@use '../utils';
+
+.social {
+  row-gap: 24px;
+  margin-left: 6px;
+  bottom: 0;
+  position: fixed;
+
+  &__icon {
+    cursor: pointer;
+    filter: utils.$grey-filter;
+    opacity: 0.7;
+    height: 26px;
+    width: 26px;
+    &:hover {
+      transform: translateY(-4px);
+      filter: utils.$green-filter;
+      transition: transform 0.22s;
+    }
+  }
+
+  &__line {
+    width: 2px;
+    opacity: 0.7;
+
+    height: 120px;
+    background-color: utils.$grey;
+  }
+}
