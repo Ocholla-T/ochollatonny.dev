@@ -12,20 +12,17 @@
     justify-content: space-between;
   }
 
+  &-fd-c {
+    flex-direction: column;
+  }
+
   &-ai-c {
     align-items: center;
   }
 }
 
-.hide-for-mobile {
-  @include mixins.breakpoint-down(medium) {
-    display: none;
-  }
-}
-.hide-for-desktop {
-  @include mixins.breakpoint-up(large) {
-    display: none;
-  }
+.container {
+  padding: 0 5rem;
 }
 
 .button {
@@ -38,4 +35,15 @@
   position: relative;
   text-decoration: none;
   font-weight: 500;
+}
+
+.hide-for-mobile {
+  @include mixins.breakpoint-down(medium) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include mixins.breakpoint-up(large) {
+    display: none;
+  }
 }
