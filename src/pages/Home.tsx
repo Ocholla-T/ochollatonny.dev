@@ -5,6 +5,7 @@ import ScrollIcon from '../images/arrow-down-outline.svg';
 import SocialIcons from '../layouts/SocialIcons';
 import Resume from '../images/Ocholla Tonny Resume.pdf';
 import { useState } from 'react';
+import ProjectCard from '../components/ProjectCard';
 
 function Home(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -39,6 +40,7 @@ function Home(): JSX.Element {
       </section>
       <SocialIcons />
       <img className="scroll-icon hide-for-mobile" src={ScrollIcon} alt="scroll" />
+      <ProjectCard />
     </main>
   );
 }
