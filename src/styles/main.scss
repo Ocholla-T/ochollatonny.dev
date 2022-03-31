@@ -1,6 +1,10 @@
 @forward 'base';
 @use 'utils';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: utils.$blue;
   font-weight: 400;
