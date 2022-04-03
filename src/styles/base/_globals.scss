@@ -1,5 +1,4 @@
-@use './mixins';
-@use './variables';
+@use '../utils';
 
 .flex {
   display: flex;
@@ -28,8 +27,8 @@
 .button {
   text-align: center;
   border-radius: 4px;
-  border: 1px solid variables.$green;
-  color: variables.$green;
+  border: 1px solid utils.$green;
+  color: utils.$green;
   cursor: pointer;
   padding: 0.625rem 1rem;
   position: relative;
@@ -38,12 +37,12 @@
 }
 
 .hide-for-mobile {
-  @include mixins.breakpoint-down(medium) {
+  @include utils.breakpoint-down(medium) {
     display: none;
   }
 }
 .hide-for-desktop {
-  @include mixins.breakpoint-up(large) {
+  @include utils.breakpoint-up(large) {
     display: none;
   }
 }
