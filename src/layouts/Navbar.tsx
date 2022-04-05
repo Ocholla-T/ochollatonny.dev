@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 import logo from '../images/logo.svg';
 import Resume from '../images/Ocholla Tonny Resume.pdf';
@@ -20,11 +20,13 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
 
   const toggleMenu = (): void => {
     setIsClicked((previousClickedState) => {
-      let newClickedState = !previousClickedState;
-      getIsMobileMenuOpenState(newClickedState);
-      return newClickedState;
+      return !previousClickedState;
     });
   };
+
+  useEffect(() => {
+    getIsMobileMenuOpenState(isClicked);
+  }, [isClicked]);
 
   return (
     <header>
