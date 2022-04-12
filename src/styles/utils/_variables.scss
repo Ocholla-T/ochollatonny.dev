@@ -1,4 +1,5 @@
-$font-mono: 'Fira Mono', monospace;
+$font-serif: 'Libre Baskerville', serif;
+$font-sans-serif: 'Montserrat', sans-serif;
 $green: #71faca;
 $blue: #00132d;
 $grey: #e4f0ff;
@@ -6,5 +7,7 @@ $green-filter: invert(97%) sepia(78%) saturate(791%) hue-rotate(77deg) brightnes
   contrast(96%);
 $grey-filter: invert(100%) sepia(85%) saturate(1158%) hue-rotate(176deg) brightness(101%)
   contrast(101%);
+
+$radius: 4px;
 
 $transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
