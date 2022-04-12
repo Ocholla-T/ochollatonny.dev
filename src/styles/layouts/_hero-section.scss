@@ -14,8 +14,8 @@
     margin: 0;
     padding: 0 2rem;
     position: relative;
-    top: 5rem;
-
+    top: 7rem;
+    height: 100vh;
     width: 100%;
   }
 
@@ -26,14 +26,17 @@
     margin-bottom: 10px;
   }
 
+  // name
   & > h1 {
     color: utils.$grey;
+    font-family: utils.$font-serif;
     font-size: clamp(42px, 6vw, 70px);
     margin-bottom: 10px;
   }
 
+  // description
   & > p {
-    color: #a5abbd;
+    opacity: 85%;
     font-size: clamp(14px, 16px, 18px);
     max-width: 540px;
     margin-top: 10px;
@@ -67,17 +70,18 @@
       transform: scaleX(0);
       transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
       z-index: -1;
+      will-change: transform;
     }
 
     &:hover {
       color: utils.$blue;
       transition: color 0.15s ease 0.1s;
 
-      > .hero__button__icon {
-        animation: bounce-left-right 0.7s ease 0.22s infinite;
-        color: utils.$blue;
-        transition: color 0.22s ease 0.13s;
-      }
+      // > .hero__button__icon {
+      //   animation: bounce-up 0.7s ease 0.22s infinite;
+      //   color: utils.$blue;
+      //   transition: color 0.22s ease 0.13s;
+      // }
 
       &:before {
         transform: scaleX(1);
@@ -87,7 +91,7 @@
 
     &__icon {
       margin-left: 0.5rem;
-      width: 24px;
+      width: 18px;
     }
   }
 }
