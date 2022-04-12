@@ -35,17 +35,17 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
         <div className="nav__links flex flex-ai-c hide-for-mobile">
           <ol className="flex">
             <li>
-              <a href="">
+              <a href="#about">
                 <span>01.</span>About
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#projects">
                 <span>02.</span>Projects
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#contact">
                 <span>03.</span>Contact
               </a>
             </li>
