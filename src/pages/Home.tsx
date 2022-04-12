@@ -16,7 +16,13 @@ function Home(): JSX.Element {
       <Navbar getIsMobileMenuOpenState={getIsMobileMenuOpenState} />
       <HeroSection isMobileMenuOpen={isMobileMenuOpen} />
       <SocialIcons />
-      <ProjectCard />
+      <ProjectCard
+        techUsed={['Vuex', 'VueJS']}
+        projectTitle="Country Info"
+        projectLink="https://countryinfo-ochollat.netlify.app/"
+        projectDescription="Frontend Mentor challenge that integrates with the REST Countries V2 API to pull data
+              and display it like in the provided designs"
+      />
     </main>
   );
 }
