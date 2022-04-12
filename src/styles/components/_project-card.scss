@@ -1,1 +1,83 @@
 @use '../utils';
+
+.projects {
+  color: utils.$grey;
+  column-gap: 7rem;
+  flex-direction: row-reverse;
+  padding: 4rem 12rem;
+  position: relative;
+
+  &__title {
+    flex: 1 2 30%;
+    font-family: utils.$font-serif;
+    font-size: 3rem;
+  }
+
+  &__card {
+    background-color: utils.$blue;
+    border-radius: 17px;
+    box-shadow: -5px -5px 14px #000a18, 5px 5px 14px #001c42;
+    color: utils.$grey;
+    flex: 2 1 70%;
+    padding: 2rem 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    cursor: pointer;
+    transition: all 0.22s ease-in-out;
+    will-change: transform;
+    margin: 8px 0;
+
+    &:hover {
+      transform: scale(1.04);
+      > .projects__card__icon {
+        color: utils.$green;
+        transition: color 0.22s ease 0.13s;
+      }
+    }
+
+    &__text {
+      flex-basis: 80%;
+      &--title {
+        // font-family: utils.$font-serif;
+        font-weight: 600;
+        margin-top: 0.5rem;
+      }
+
+      &--description {
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        // font-weight: 500;
+        opacity: 90%;
+      }
+
+      &--tech {
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+    //website icon
+    &__icon {
+      width: 48px;
+    }
+
+    &__button {
+      flex-basis: 30%;
+      color: utils.$grey;
+      border-color: utils.$grey;
+
+      //button icon
+      &--icon {
+        width: 18px;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
