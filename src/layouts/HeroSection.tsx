@@ -1,4 +1,5 @@
-import { ReactComponent as ArrowIcon } from '../images/arrow-outline.svg';
+import { ReactComponent as OpenLink } from '../images/open-outline.svg';
+
 import { ReactComponent as ScrollIcon } from '../images/arrow-down-outline.svg';
 import Resume from '../images/Ocholla Tonny Resume.pdf';
 import '../styles/layouts/_hero-section.scss';
@@ -27,7 +28,7 @@ function HeroSection({ isMobileMenuOpen }: Props): JSX.Element {
         rel="noopener noreferrer"
       >
         Resume
-        <ArrowIcon className="hero__button__icon" />
+        <OpenLink className="hero__button__icon" />
       </a>
       <ScrollIcon className="scroll-icon hide-for-mobile" />
     </section>
