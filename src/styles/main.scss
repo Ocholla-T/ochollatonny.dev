@@ -11,7 +11,7 @@ html {
 body {
   background-color: utils.$blue;
   font-weight: 400;
-  font-family: 'Poppins', sans-serif;
+  font-family: utils.$font-sans-serif;
   height: 100%;
   width: 100%;
 }
