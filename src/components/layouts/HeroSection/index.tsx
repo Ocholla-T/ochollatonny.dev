@@ -1,14 +1,16 @@
-import { ReactComponent as OpenLink } from '../images/open-outline.svg';
+/* Images */
+import { ReactComponent as OpenLink } from '@images/open-outline.svg';
+import { ReactComponent as ScrollIcon } from '@images/arrow-down-outline.svg';
+import Resume from '@images/Ocholla Tonny Resume.pdf';
 
-import { ReactComponent as ScrollIcon } from '../images/arrow-down-outline.svg';
-import Resume from '../images/Ocholla Tonny Resume.pdf';
-import '../styles/layouts/_hero-section.scss';
+/* Styling */
+import './styles.scss';
 
-interface Props {
+interface HeroSectionProps {
   isMobileMenuOpen: boolean;
 }
 
-function HeroSection({ isMobileMenuOpen }: Props): JSX.Element {
+function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
   return (
     <section className={`hero flex flex-fd-c ${isMobileMenuOpen && 'blur'} `}>
       <h4>Hi there &#128075;, I'm</h4>

@@ -1,9 +1,14 @@
-import Navbar from '../layouts/Navbar';
-import '../styles/pages/_home.scss';
-import SocialIcons from '../layouts/SocialIcons';
+/* Dependencies */
 import { useState } from 'react';
-import ProjectCard from '../components/ProjectCard';
-import HeroSection from '../layouts/HeroSection';
+
+/* Components */
+import Navbar from '@layouts/NavBar';
+import SocialIcons from '@layouts/SocialIcons';
+import HeroSection from '@layouts/HeroSection';
+import ProjectCard from '@components/ProjectCard';
+
+/* Styling */
+import './styles.scss';
 
 function Home(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);

@@ -1,5 +1,8 @@
-import '../styles/components/_project-card.scss';
-import { ReactComponent as FlagIcon } from '../images/flag-outline.svg';
+/* Images */
+import { ReactComponent as FlagIcon } from '@images/flag-outline.svg';
+
+/* Styling */
+import './styles.scss';
 
 interface Props {
   projectTitle: string;

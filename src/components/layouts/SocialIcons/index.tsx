@@ -1,6 +1,9 @@
-import '../styles/layouts/_social-icons.scss';
-import { ReactComponent as LinkedInIcon } from '../images/logo-linkedin.svg';
-import { ReactComponent as GithubIcon } from '../images/logo-github.svg';
+/*Images */
+import { ReactComponent as LinkedInIcon } from '@images/logo-linkedin.svg';
+import { ReactComponent as GithubIcon } from '@images/logo-github.svg';
+
+/*Styling */
+import './styles.scss';
 
 function SocialIcons() {
   return (

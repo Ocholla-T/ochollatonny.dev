@@ -1,4 +1,4 @@
-@use '../utils';
+@use '@styles/utils';
 
 .projects {
   color: utils.$grey;
@@ -56,6 +56,7 @@
         font-weight: 700;
         letter-spacing: 3px;
         text-transform: uppercase;
+        color: utils.$green;
       }
     }
     //website icon

@@ -1,8 +1,13 @@
+/* Dependencies */
 import { useEffect, useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
-import logo from '../images/logo.svg';
-import Resume from '../images/Ocholla Tonny Resume.pdf';
-import '../styles/layouts/_navbar.scss';
+
+/* Images */
+import logo from '@images/logo.svg';
+import Resume from '@images/Ocholla Tonny Resume.pdf';
+
+/* Styling */
+import './styles.scss';
 
 interface Props {
   getIsMobileMenuOpenState: Function;
