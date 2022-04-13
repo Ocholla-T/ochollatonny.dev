@@ -15,7 +15,8 @@ export default defineConfig({
   },
   plugins: [
     svgr({
-      defaultExport: false,
+      icon: true,
+      typescript: true,
     }),
     react(),
   ],
