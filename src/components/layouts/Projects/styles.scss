@@ -1,0 +1,15 @@
+@use '@styles/utils';
+
+.projects {
+  color: utils.$grey;
+  column-gap: 7rem;
+  flex-direction: row-reverse;
+  padding: 4rem 12rem;
+  position: relative;
+
+  &__title {
+    flex: 1 2 30%;
+    font-family: utils.$font-serif;
+    font-size: 3rem;
+  }
+}
