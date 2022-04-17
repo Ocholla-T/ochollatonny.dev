@@ -1,29 +1,35 @@
 @use '@styles/utils';
 
 .social {
-  row-gap: 24px;
-  margin-left: 6px;
   bottom: 0;
+  margin-left: 6px;
   position: fixed;
+  row-gap: 24px;
+  z-index: 10;
 
   &__icon {
     cursor: pointer;
     filter: utils.$grey-filter;
-    opacity: 0.7;
     height: 26px;
+    opacity: 0.7;
     width: 26px;
+
     &:hover {
-      transform: translateY(-4px);
       filter: utils.$green-filter;
+      transform: translateY(-4px);
       transition: transform 0.22s;
+    }
+
+    &--linkedin {
+      height: 24px;
+      width: 24px;
     }
   }
 
   &__line {
-    width: 2px;
-    opacity: 0.7;
-
-    height: 120px;
     background-color: utils.$grey;
+    height: 120px;
+    opacity: 0.7;
+    width: 2px;
   }
 }
