@@ -15,7 +15,7 @@
     padding: 0 2rem;
     position: relative;
     top: 7rem;
-    height: 100vh;
+    height: 65vh;
     width: 100%;
   }
 
@@ -108,11 +108,6 @@
   margin-right: auto;
   transform: translate3D(0, 0, 0);
   animation: bounce-up 0.7s ease 0.22s infinite;
-}
-
-.blur {
-  filter: blur(8px);
-  transition: all 0.22s ease-out;
 }
 
 @keyframes bounce-left-right {
