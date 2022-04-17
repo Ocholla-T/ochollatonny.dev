@@ -12,7 +12,7 @@ function SocialIcons() {
         <GithubIcon className="social__icon" />
       </a>
       <a href="https://www.linkedin.com/in/ochollatonny" target="_blank" rel="noopener noreferrer">
-        <LinkedInIcon className="social__icon" />
+        <LinkedInIcon className="social__icon social__icon--linkedin" />
       </a>
       <div className="social__line" />
     </aside>
