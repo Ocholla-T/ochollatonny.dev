@@ -2,10 +2,11 @@
 import { useState } from 'react';
 
 /* Components */
-import Navbar from '@layouts/NavBar';
-import SocialIcons from '@layouts/SocialIcons';
+import Contacts from '@layouts/Contacts';
 import HeroSection from '@layouts/HeroSection';
+import Navbar from '@layouts/NavBar';
 import Projects from '@layouts/Projects';
+import SocialIcons from '@layouts/SocialIcons';
 
 /* Styling */
 import './styles.scss';
@@ -22,7 +23,8 @@ function Home(): JSX.Element {
       <Navbar getIsMobileMenuOpenState={getIsMobileMenuOpenState} />
       <HeroSection isMobileMenuOpen={isMobileMenuOpen} />
       <SocialIcons />
-      <Projects />
+      <Projects isMobileMenuOpen={isMobileMenuOpen} />
+      <Contacts />
     </main>
   );
 }
