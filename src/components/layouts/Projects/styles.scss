@@ -2,10 +2,35 @@
 
 .projects {
   color: utils.$grey;
-  column-gap: 7rem;
-  flex-direction: row-reverse;
   padding: 4rem 12rem;
   position: relative;
+  flex-direction: column;
+  row-gap: 1rem;
+  z-index: 0;
+
+  @include utils.breakpoint-down(medium) {
+    margin: 0;
+    padding: 0 2rem;
+  }
+
+  > div {
+    flex-direction: row-reverse;
+    column-gap: 7rem;
+
+    @include utils.breakpoint-down(medium) {
+      flex-direction: column;
+    }
+  }
+
+  &__subtitle {
+    > span {
+      color: utils.$green;
+      font-size: 1rem;
+    }
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+  }
 
   &__title {
     flex: 1 2 30%;
