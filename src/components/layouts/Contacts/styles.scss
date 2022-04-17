@@ -1,0 +1,9 @@
+@use '@styles/utils';
+
+.contacts {
+  color: utils.$grey;
+  &__title {
+    font-weight: 500;
+    color: utils.$green;
+  }
+}
