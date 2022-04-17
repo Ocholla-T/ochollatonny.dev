@@ -16,9 +16,10 @@
   margin: 20px 0;
 
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
 
-    > .card__icon {
+    > .card__icon,
+    .card__links--icon-open {
       filter: utils.$green-filter;
       transition: filter 0.22s ease 0.13s;
     }
@@ -26,6 +27,10 @@
 
   &__text {
     flex-basis: 80%;
+
+    @include utils.breakpoint-down(medium) {
+      flex: 100%;
+    }
 
     &--title {
       font-weight: 600;
@@ -51,7 +56,33 @@
   //website icon
   &__icon {
     width: 48px;
-    filter: utils.$grey-filter;
+    filter: utils.$green-filter;
+  }
+
+  &__links {
+    &--icon {
+      margin: 8px 8px 0 0;
+      width: 20px;
+      filter: utils.$grey-filter;
+
+      @include utils.breakpoint-down(medium) {
+        width: 26px;
+
+        &:visited {
+          filter: utils.$green-filter;
+        }
+      }
+
+      &-github {
+        will-change: transform;
+
+        &:hover {
+          filter: utils.$green-filter;
+          transform: scale3D(1.05, 1.05, 1.05);
+          transition: all 0.22s ease-out;
+        }
+      }
+    }
   }
 
   &__button {
