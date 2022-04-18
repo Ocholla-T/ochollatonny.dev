@@ -44,45 +44,6 @@ header {
         }
       }
     }
-
-    &__button {
-      border: none;
-      color: utils.$green;
-      cursor: pointer;
-      padding: 0.625rem 1rem;
-      position: relative;
-
-      &::before,
-      &::after {
-        content: '';
-        display: inline-block;
-        height: 35%;
-        position: absolute;
-        transition: 0.35s;
-        width: 15%;
-        z-index: 2;
-      }
-
-      &::before {
-        border-top: 1px solid utils.$green;
-        border-left: 1px solid utils.$green;
-        left: 0;
-        top: 0;
-      }
-
-      &::after {
-        border-right: 1px solid utils.$green;
-        border-bottom: 1px solid utils.$green;
-        bottom: 0;
-        right: 0;
-      }
-
-      &:hover::before,
-      &:hover::after {
-        width: 99%;
-        height: 99%;
-      }
-    }
   }
 
   &__menu {

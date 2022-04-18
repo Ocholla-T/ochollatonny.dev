@@ -3,6 +3,9 @@ import { ReactComponent as OpenLink } from '@images/open-outline.svg';
 import { ReactComponent as ScrollIcon } from '@images/arrow-down-outline.svg';
 import Resume from '@images/Ocholla Tonny Resume.pdf';
 
+/* Components */
+import Button from '@components/Button';
+
 /* Styling */
 import './styles.scss';
 
@@ -23,15 +26,10 @@ function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
         I'm always focused on continuous growth when learning & creating accessible, user-centred
         products.
       </p>
-      <a
-        href={Resume}
-        className="hero__button button flex flex-ai-c flex-jc-c"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Button buttonLink={Resume} className="hero__button">
         Resume
         <OpenLink className="hero__button__icon" />
-      </a>
+      </Button>
       <ScrollIcon className="scroll-icon hide-for-mobile" />
     </section>
   );

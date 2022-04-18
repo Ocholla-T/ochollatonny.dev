@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
+/* Components */
+import Button from '@components/Button';
+
 /* Images */
 import logo from '@images/logo.svg';
 import Resume from '@images/Ocholla Tonny Resume.pdf';
@@ -55,9 +58,9 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
               </a>
             </li>
           </ol>
-          <a href={Resume} className="nav__links__button" target="_blank" rel="noopener noreferrer">
+          <Button buttonLink={Resume} className="nav__links__button">
             Resume
-          </a>
+          </Button>
         </div>
 
         {/* mobile and tablet screen markup */}
@@ -96,9 +99,7 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
                     </a>
                   </li>
                 </ol>
-                <a href={Resume} className="button" target="_blank" rel="noopener noreferrer">
-                  Resume
-                </a>
+                <Button buttonLink={Resume}>Resume</Button>
               </animated.aside>
             ),
         )}

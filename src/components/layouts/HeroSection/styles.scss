@@ -51,42 +51,9 @@
   &__button {
     margin-top: 20px;
     max-width: 192px;
-    position: relative;
-    perspective: 1000px;
-    backface-visibility: hidden;
-    z-index: 1;
-    transition: color 0s;
-    transition-delay: 0.35s;
 
-    &:before {
-      content: '';
-      background: utils.$green;
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform-origin: left top;
-      transform: scaleX(0);
-      transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-      z-index: -1;
-      will-change: transform;
-    }
-
-    &:hover {
-      color: utils.$blue;
-      transition: color 0.15s ease 0.1s;
-
-      // > .hero__button__icon {
-      //   animation: bounce-up 0.7s ease 0.22s infinite;
-      //   color: utils.$blue;
-      //   transition: color 0.22s ease 0.13s;
-      // }
-
-      &:before {
-        transform: scaleX(1);
-        transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-      }
+    @include utils.breakpoint-down(medium) {
+      max-width: 100%;
     }
 
     &__icon {
