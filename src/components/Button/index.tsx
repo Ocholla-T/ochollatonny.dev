@@ -4,7 +4,7 @@ import './styles.scss';
 
 interface ButtonProps {
   buttonLink: string;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
