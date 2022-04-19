@@ -1,0 +1,10 @@
+@use '@styles/utils';
+
+.footer {
+  color: utils.$grey;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 85%;
+  margin-bottom: 20px;
+}
