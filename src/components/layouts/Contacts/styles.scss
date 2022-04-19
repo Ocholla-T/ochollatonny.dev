@@ -2,8 +2,37 @@
 
 .contacts {
   color: utils.$grey;
+  flex-direction: column;
+  text-align: center;
+  max-width: 550px;
+  row-gap: 0.5rem;
+  margin-bottom: 44px;
+
   &__title {
     font-weight: 500;
+    font-size: 18px;
     color: utils.$green;
+
+    > span {
+      color: utils.$green;
+      font-size: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 34px;
+    letter-spacing: 1px;
+    font-family: utils.$font-serif;
+  }
+
+  &__description {
+    // font-size: 14px;
+    font-weight: 500;
+    opacity: 85%;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    max-width: max-content;
   }
 }
