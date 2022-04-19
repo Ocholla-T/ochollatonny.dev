@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 /* Components */
 import Contacts from '@layouts/Contacts';
+import Footer from '@layouts/Footer';
 import HeroSection from '@layouts/HeroSection';
 import Navbar from '@layouts/NavBar';
 import Projects from '@layouts/Projects';
@@ -25,6 +26,7 @@ function Home(): JSX.Element {
       <SocialIcons />
       <Projects isMobileMenuOpen={isMobileMenuOpen} />
       <Contacts />
+      <Footer />
     </main>
   );
 }
