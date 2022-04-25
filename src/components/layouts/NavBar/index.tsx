@@ -1,40 +1,40 @@
 /* Dependencies */
-import { useEffect, useState } from 'react';
-import { useTransition, animated, config } from 'react-spring';
+import { useEffect, useState } from 'react'
+import { useTransition, animated, config } from 'react-spring'
 
 /* Components */
-import Button from '@components/Button';
+import Button from '@components/Button'
 
 /* Images */
-import logo from '@images/logo.svg';
-import Resume from '@images/Ocholla Tonny Resume.pdf';
+import logo from '@images/logo.svg'
+import Resume from '@images/Ocholla Tonny Resume.pdf'
 
 /* Styling */
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
-  getIsMobileMenuOpenState: Function;
+  getIsMobileMenuOpenState: Function
 }
 
 function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false)
 
   const transition = useTransition(isClicked, {
     config: config.gentle,
     from: { transform: 'translate3d(+100%, 0px, 0px)' },
     enter: { transform: 'translate3d(0%, 0px, 0px)' },
     leave: { transform: 'translate3d(+100%, 0px, 0px)' },
-  });
+  })
 
   const toggleMenu = (): void => {
     setIsClicked((previousClickedState) => {
-      return !previousClickedState;
-    });
-  };
+      return !previousClickedState
+    })
+  }
 
   useEffect(() => {
-    getIsMobileMenuOpenState(isClicked);
-  }, [isClicked]);
+    getIsMobileMenuOpenState(isClicked)
+  }, [isClicked])
 
   return (
     <header>
@@ -43,24 +43,17 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
         <div className="nav__links flex flex-ai-c hide-for-mobile">
           <ol className="flex">
             <li>
-              <a href="#about">
-                <span>01.</span>About
-              </a>
-            </li>
-            <li>
               <a href="#projects">
-                <span>02.</span>Projects
+                <span>01.</span>Projects
               </a>
             </li>
             <li>
               <a href="#contact">
-                <span>03.</span>Contact
+                <span>02.</span>Contact
               </a>
             </li>
           </ol>
-          <Button buttonLink={Resume} className="nav__links__button">
-            Resume
-          </Button>
+          <Button buttonLink={Resume}>Say Hello!</Button>
         </div>
 
         {/* mobile and tablet screen markup */}
@@ -78,22 +71,15 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
               >
                 <ol className="flex">
                   <li>
-                    <a href="">
+                    <a href="#projects">
                       <span>01.</span>
-                      <br />
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <span>02.</span>
                       <br />
                       Projects
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <span>03.</span>
+                    <a href="#contact">
+                      <span>02.</span>
                       <br />
                       Contact
                     </a>
@@ -105,7 +91,7 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
         )}
       </nav>
     </header>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
