@@ -1,9 +1,10 @@
 /*Images */
-import { ReactComponent as LinkedInIcon } from '@images/logo-linkedin.svg';
-import { ReactComponent as GithubIcon } from '@images/logo-github.svg';
+import { ReactComponent as MailIcon } from '@images/mail.svg'
+import { ReactComponent as LinkedInIcon } from '@images/logo-linkedin.svg'
+import { ReactComponent as GithubIcon } from '@images/logo-github.svg'
 
 /*Styling */
-import './styles.scss';
+import './styles.scss'
 
 function SocialIcons() {
   return (
@@ -14,9 +15,12 @@ function SocialIcons() {
       <a href="https://www.linkedin.com/in/ochollatonny" target="_blank" rel="noopener noreferrer">
         <LinkedInIcon className="social__icon social__icon--linkedin" />
       </a>
+      <a href="mailto:tonnyocholla8@gmail.com">
+        <MailIcon className="social__icon" />
+      </a>
       <div className="social__line" />
     </aside>
-  );
+  )
 }
 
-export default SocialIcons;
+export default SocialIcons
