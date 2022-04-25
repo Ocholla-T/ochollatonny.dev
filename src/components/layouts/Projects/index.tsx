@@ -1,22 +1,22 @@
 /*Dependencies */
-import projects from './projects';
+import projects from './projects'
 
 /* Components*/
-import Card from './Card';
+import Card from './Card'
 
 /* Styles*/
-import './styles.scss';
+import './styles.scss'
 
 interface Projects {
-  githubLink: string;
-  imageSource: string;
-  projectDescription: string;
-  projectLink: string;
-  projectTitle: string;
-  techUsed: string[];
+  githubLink: string
+  imageSource: string
+  projectDescription: string
+  projectLink: string
+  projectTitle: string
+  techUsed: string[]
 }
 interface ProjectsProps {
-  isMobileMenuOpen: boolean;
+  isMobileMenuOpen: boolean
 }
 
 function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Element {
@@ -36,7 +36,7 @@ function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Element {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

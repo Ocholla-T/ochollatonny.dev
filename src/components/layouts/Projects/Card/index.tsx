@@ -1,29 +1,28 @@
 /* Dependencies */
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 /* Images */
-import { ReactComponent as OpenLink } from '@images/open-outline.svg';
-import { ReactComponent as GithubIcon } from '@images/logo-github.svg';
+import { ReactComponent as OpenLink } from '@images/open-outline.svg'
+import { ReactComponent as GithubIcon } from '@images/logo-github.svg'
 
 /* Styling */
-import './styles.scss';
+import './styles.scss'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
   project: {
-    githubLink: string;
-    imageSource: string;
-    projectDescription: string;
-    projectLink: string;
-    projectTitle: string;
-    techUsed: string[];
-  };
+    githubLink: string
+    projectDescription: string
+    projectLink: string
+    projectTitle: string
+    techUsed: string[]
+  }
 }
 
 function Card({ children, project }: Props): JSX.Element {
   const goToProject = (): void => {
-    window.open(`${project.projectLink}`, '_blank');
-  };
+    window.open(`${project.projectLink}`, '_blank')
+  }
 
   return (
     <article className="card flex flex-jc-sb" onClick={goToProject}>
@@ -43,7 +42,7 @@ function Card({ children, project }: Props): JSX.Element {
       </div>
       {children}
     </article>
-  );
+  )
 }
 
-export default Card;
+export default Card
