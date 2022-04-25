@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -21,7 +21,7 @@
     "skipLibCheck": false,
     "strict": true,
     "target": "ESNext",
-    "types": ["vite-plugin-svgr/client"],
+    "types": ["vite-plugin-svgr/client", "node"],
     "useDefineForClassFields": true
   },
   "include": ["src"],
