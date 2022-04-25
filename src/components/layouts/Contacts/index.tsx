@@ -1,6 +1,6 @@
 /*Styles */
-import Button from '@components/Button';
-import './styles.scss';
+import Button from '@components/Button'
+import './styles.scss'
 
 function Contacts(): JSX.Element {
   return (
@@ -11,15 +11,15 @@ function Contacts(): JSX.Element {
         </h3>
         <h1 className="contacts__subtitle">Get in Touch</h1>
         <p className="contacts__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellat quia quisquam!
-          Facere molestias quam beatae corporis eveniet,
+          Want to build a landing page for your business or personal products that can fit all
+          screen sizes, feel free to jump into my inbox. Giving YOU one less thing to worry about!
         </p>
         <Button buttonLink="mailto:tonnyocholla8@gmail.com" className="contacts__button">
           Let's Chat
         </Button>
       </div>
     </section>
-  );
+  )
 }
 
-export default Contacts;
+export default Contacts
