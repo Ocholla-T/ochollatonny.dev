@@ -9,7 +9,7 @@ import './styles.scss'
 
 interface Projects {
   githubLink: string
-  imageSource: string
+  image: string
   projectDescription: string
   projectLink: string
   projectTitle: string
@@ -30,7 +30,11 @@ function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Element {
         <div>
           {projects.map((project: Projects, index: number) => (
             <Card key={index} project={project}>
-              <img src={project.imageSource} className="card__icon hide-for-mobile" alt="" />
+              <img
+                src={project.image}
+                alt="This is an image representing the project"
+                className="card__icon"
+              />
             </Card>
           ))}
         </div>
