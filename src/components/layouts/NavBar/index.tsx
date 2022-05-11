@@ -1,6 +1,7 @@
 /* Dependencies */
 import { useEffect, useState } from 'react'
 import { useTransition, animated, config } from 'react-spring'
+import { gsap } from 'gsap'
 
 /* Components */
 import Button from '@components/Button'
@@ -37,7 +38,7 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
   }, [isClicked])
 
   return (
-    <header>
+    <header ref="header">
       <nav className="nav flex flex-ai-c flex-jc-sb">
         <img className="nav__logo" src={logo} alt="logo" />
         <div className="nav__links flex flex-ai-c hide-for-mobile">

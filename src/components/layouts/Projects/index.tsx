@@ -33,7 +33,7 @@ function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Element {
               <img
                 src={project.image}
                 alt="This is an image representing the project"
-                className="card__icon"
+                className="card__icon hide-for-mobile"
               />
             </Card>
           ))}
