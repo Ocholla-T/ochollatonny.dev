@@ -38,7 +38,7 @@ function Navbar({ getIsMobileMenuOpenState }: Props): JSX.Element {
   }, [isClicked])
 
   return (
-    <header ref="header">
+    <header>
       <nav className="nav flex flex-ai-c flex-jc-sb">
         <img className="nav__logo" src={logo} alt="logo" />
         <div className="nav__links flex flex-ai-c hide-for-mobile">
