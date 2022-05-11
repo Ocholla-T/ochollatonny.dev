@@ -1,5 +1,5 @@
 /* Dependencies */
-import { useState } from 'react'
+import { useState, AnimationEventHandler } from 'react'
 
 /* Components */
 import Contacts from '@layouts/Contacts'
@@ -12,23 +12,37 @@ import SocialIcons from '@layouts/SocialIcons'
 /* Styling */
 import './styles.scss'
 
-function Home(): JSX.Element {
+/** Images */
+import { ReactComponent as Logo } from '@images/logo.svg'
+
+export default function Home(): JSX.Element {
+  const [preloader, setPreloader] = useState<boolean>(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   const getIsMobileMenuOpenState: Function = (stateOfMobileMenu: boolean): void => {
     setIsMobileMenuOpen(stateOfMobileMenu)
   }
 
+  const loadHomePage: AnimationEventHandler<SVGSVGElement> = (): void => {
+    setPreloader((previousPreloaderState) => !previousPreloaderState)
+  }
+
   return (
-    <main className="flex flex-fd-c ">
-      <Navbar getIsMobileMenuOpenState={getIsMobileMenuOpenState} />
-      <HeroSection isMobileMenuOpen={isMobileMenuOpen} />
-      <SocialIcons />
-      <Projects isMobileMenuOpen={isMobileMenuOpen} />
-      <Contacts />
-      <Footer />
-    </main>
+    <>
+      {preloader ? (
+        <div className="preloader flex flex-ai-c flex-jc-c">
+          <Logo className="preloader__logo" width={55} onAnimationEnd={loadHomePage} />
+        </div>
+      ) : (
+        <main className="flex flex-fd-c ">
+          <Navbar getIsMobileMenuOpenState={getIsMobileMenuOpenState} />
+          <HeroSection isMobileMenuOpen={isMobileMenuOpen} />
+          <SocialIcons />
+          <Projects isMobileMenuOpen={isMobileMenuOpen} />
+          <Contacts />
+          <Footer />
+        </main>
+      )}
+    </>
   )
 }
-
-export default Home

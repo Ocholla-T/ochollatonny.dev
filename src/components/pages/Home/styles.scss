@@ -2,3 +2,31 @@ main {
   min-height: 100%;
   position: relative;
 }
+
+.preloader {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__logo {
+    path:nth-of-type(1) {
+      animation: animate 3.5s ease-out;
+      opacity: 1;
+      stroke-dasharray: 180;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 180;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
