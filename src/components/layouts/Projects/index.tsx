@@ -45,7 +45,7 @@ export default function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Eleme
 
   if (!!entry?.isIntersecting && window.matchMedia('(min-width: 600px)').matches) {
     gsap.to(entry.target, {
-      opacity: 1,
+      opacity: 2,
       x: 0,
     })
   }

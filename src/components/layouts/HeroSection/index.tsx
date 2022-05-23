@@ -26,8 +26,8 @@ function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
 
   const tl = gsap.timeline({
     defaults: {
-      ease: 'Power4.inOut',
-      duration: 2,
+      ease: 'Power4.Out',
+      duration: 1.5,
     },
   })
 
@@ -37,7 +37,6 @@ function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
         'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
         opacity: 1,
         y: 0,
-        duration: 2.2,
       }).to(
         heroButton.current,
         {
@@ -45,7 +44,7 @@ function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
           opacity: 1,
           y: 0,
         },
-        '-=2',
+        '-=1.2',
       )
     }
   })
