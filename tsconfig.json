@@ -13,6 +13,7 @@
     "noEmit": true,
     "paths": {
       "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
       "@layouts/*": ["components/layouts/*"],
       "@images/*": ["images/*"],
       "@styles/*": ["styles/*"]
