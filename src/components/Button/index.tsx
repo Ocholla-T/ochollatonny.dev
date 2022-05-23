@@ -1,24 +1,30 @@
 /** Styles */
-import { ReactNode } from 'react';
-import './styles.scss';
+import { Ref, forwardRef, ReactNode } from 'react'
+import './styles.scss'
 
-interface ButtonProps {
-  buttonLink: string;
-  children?: ReactNode;
-  className?: string;
+type ButtonProps = {
+  buttonLink: string
+  children?: ReactNode
+  className?: string
 }
 
-function Button({ buttonLink, className, children }: ButtonProps): JSX.Element {
-  return (
-    <a
-      href={buttonLink}
-      className={`button flex flex-ai-c flex-jc-c ${className}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {children}
-    </a>
-  );
-}
+const Button = forwardRef(
+  (
+    { buttonLink, className, children }: ButtonProps,
+    buttonRef: Ref<HTMLAnchorElement>,
+  ): JSX.Element => {
+    return (
+      <a
+        ref={buttonRef}
+        href={buttonLink}
+        className={`button flex flex-ai-c flex-jc-c ${className}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    )
+  },
+)
 
-export default Button;
+export default Button
