@@ -1,19 +1,20 @@
 @use '@styles/utils';
 
 .card {
+  align-items: center;
   background-color: utils.$blue;
   border-radius: 17px;
   box-shadow: -5px -5px 14px #000a18, 5px 5px 14px #001c42;
   color: utils.$grey;
-  flex: 2 1 70%;
-  padding: 2rem 2.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-  row-gap: 10px;
   cursor: pointer;
-  transition: all 0.22s ease-in-out;
-  will-change: transform;
+  flex-wrap: wrap;
+  flex: 2 1 70%;
   margin: 20px 0;
+  opacity: 0;
+  padding: 2rem 2.5rem;
+  row-gap: 10px;
+  transform: translateX(250px);
+  will-change: transform;
 
   &:hover {
     transform: scale(1.05);
