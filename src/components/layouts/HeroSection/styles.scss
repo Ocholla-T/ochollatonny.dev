@@ -21,11 +21,13 @@
 
   &__text,
   &__button {
-    opacity: 0;
-    transform: translate3d(0, 100px, 0);
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    will-change: transform;
-    perspective: 1000px;
+    @include utils.breakpoint-up(large) {
+      opacity: 0;
+      transform: translate3d(0, 100px, 0);
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      will-change: transform;
+      perspective: 1000px;
+    }
   }
 
   & > h4 {

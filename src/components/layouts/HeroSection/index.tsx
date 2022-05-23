@@ -32,20 +32,22 @@ function HeroSection({ isMobileMenuOpen }: HeroSectionProps): JSX.Element {
   })
 
   useEffect(() => {
-    tl.to([h1.current, h4.current, paragraphOne.current, paragraphTwo.current], {
-      'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-      opacity: 1,
-      y: 0,
-      duration: 2.2,
-    }).to(
-      heroButton.current,
-      {
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      tl.to([h1.current, h4.current, paragraphOne.current, paragraphTwo.current], {
         'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
         opacity: 1,
         y: 0,
-      },
-      '-=2',
-    )
+        duration: 2.2,
+      }).to(
+        heroButton.current,
+        {
+          'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+          opacity: 1,
+          y: 0,
+        },
+        '-=2',
+      )
+    }
   })
 
   return (
