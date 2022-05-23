@@ -42,7 +42,8 @@ export default function Projects({ isMobileMenuOpen }: ProjectsProps): JSX.Eleme
   const entry = useIntersectionObserver(cardRef, { threshold: 0.25 })
 
   /*When the card intersects with the viewport the animation triggers */
-  if (!!entry?.isIntersecting) {
+
+  if (!!entry?.isIntersecting && window.matchMedia('min-width: 600px')) {
     gsap.to(entry.target, {
       opacity: 1,
       x: 0,
