@@ -19,6 +19,15 @@
     width: 100%;
   }
 
+  &__text,
+  &__button {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    will-change: transform;
+    perspective: 1000px;
+  }
+
   & > h4 {
     color: utils.$green;
     font-size: clamp(16px, 1.4vw, 22px);
