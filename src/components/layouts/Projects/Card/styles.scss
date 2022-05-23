@@ -10,11 +10,15 @@
   flex-wrap: wrap;
   flex: 2 1 70%;
   margin: 20px 0;
-  opacity: 0;
+
   padding: 2rem 2.5rem;
   row-gap: 10px;
-  transform: translateX(250px);
   will-change: transform;
+
+  @include utils.breakpoint-up(large) {
+    opacity: 0;
+    transform: translateX(250px);
+  }
 
   &:hover {
     transform: scale(1.05);
