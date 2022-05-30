@@ -4,13 +4,13 @@ import code from '@images/code-slash-outline.svg'
 
 export default [
   {
-    githubLink: 'https://github.com/Ocholla-T/country',
+    githubLink: 'https://github.com/Ocholla-T/country-fm',
     image: flag,
     projectDescription:
-      'Integrates with the REST Countries V2 API to pull data and display it like in the provided designs',
-    projectLink: 'https://countryinfo-ochollat.netlify.app/',
-    projectTitle: 'Country Info',
-    techUsed: ['Vuex', 'VueJS'],
+      'Integrates with the REST Countries V3.1 API to pull data and display it like in the provided designs',
+    projectLink: 'https://country-fm.netlify.app/',
+    projectTitle: 'Country',
+    techUsed: ['Pinia', 'VueJS', 'Typescript'],
   },
   {
     githubLink: 'https://github.com/Ocholla-T/shortly',
